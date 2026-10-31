@@ -69,6 +69,13 @@ export interface Flashcard {
  * Every question has a stable `id` and a `kind` discriminator.
  */
 export type Question =
+  | InstructionalCardQuestion
+  | ImageChoiceQuestion
+  | WordChoiceQuestion
+  | SentenceChoiceQuestion
+  | FillBlankChoiceQuestion
+  | SpeakingQuestion
+  | SpellingQuestion
   | MultipleChoiceQuestion
   | SelectImageQuestion
   | TranslatePromptQuestion
@@ -91,6 +98,74 @@ interface QuestionBase {
   vocabId?: string;
   /** Approximate difficulty 1..5 used for ordering/XP weighting. */
   difficulty?: number;
+  /** Hidden grammar note revealed on demand by an "Explain" button. */
+  grammarNotes?: LocalizedText;
+  /** Educational feedback shown after the learner answers. */
+  feedback?: QuestionFeedback;
+}
+
+/** Brief educational explanation shown after answering. */
+export interface QuestionFeedback {
+  /** Why the correct answer is right. */
+  explanation: LocalizedText;
+  /** Common mistake to avoid, shown only on wrong answers. */
+  commonMistake?: LocalizedText;
+  /** Optional grammar tip key, shown when grammarNotes are revealed. */
+  grammarTip?: LocalizedText;
+}
+
+export interface InstructionalCardQuestion extends QuestionBase {
+  kind: 'instructional-card';
+  englishText: string;
+  translation: LocalizedText;
+  image?: string;
+  audio?: AudioRef;
+  showMicrophone?: boolean;
+}
+
+export interface ImageChoiceQuestion extends QuestionBase {
+  kind: 'image-choice';
+  stem: string;
+  stemAudio?: AudioRef;
+  options: { id: string; image: string; label: string }[];
+  answer: string;
+}
+
+export interface WordChoiceQuestion extends QuestionBase {
+  kind: 'word-choice';
+  source: LocalizedText;
+  options: string[];
+  answer: number;
+  optionAudio?: AudioRef[];
+}
+
+export interface SentenceChoiceQuestion extends QuestionBase {
+  kind: 'sentence-choice';
+  source: LocalizedText;
+  options: string[];
+  answer: number;
+}
+
+export interface FillBlankChoiceQuestion extends QuestionBase {
+  kind: 'fill-blank-choice';
+  sentence: string;
+  translation?: LocalizedText;
+  options: string[];
+  answer: number;
+}
+
+export interface SpeakingQuestion extends QuestionBase {
+  kind: 'speaking';
+  englishText: string;
+  translation: LocalizedText;
+  audio?: AudioRef;
+}
+
+export interface SpellingQuestion extends QuestionBase {
+  kind: 'spelling';
+  audio?: AudioRef;
+  promptText?: LocalizedText;
+  answers: string[];
 }
 
 export interface MultipleChoiceQuestion extends QuestionBase {

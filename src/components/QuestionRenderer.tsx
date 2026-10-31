@@ -1,7 +1,8 @@
 import { useState, type ReactNode } from 'react';
+import { useSpeech } from '@/hooks/useSpeech';
 import { useI18n } from '@/i18n/I18nContext';
 import type { Question } from '@/types/content';
-import { Check, X } from 'lucide-react';
+import { Check, X, Mic, Volume2 } from 'lucide-react';
 
 export interface AnswerResult {
   correct: boolean;
@@ -20,6 +21,18 @@ export function QuestionRenderer({ question, onAnswer }: QuestionRendererProps) 
   const { lt } = useI18n();
 
   switch (question.kind) {
+    case 'instructional-card':
+      return <InstructionalRenderer question={question} />;
+    case 'image-choice':
+      return <ImageChoiceRenderer question={question} onAnswer={onAnswer} />;
+    case 'word-choice':
+    case 'sentence-choice':
+    case 'fill-blank-choice':
+      return <StructuredChoiceRenderer question={question} onAnswer={onAnswer} />;
+    case 'speaking':
+      return <SpeakingRenderer question={question} />;
+    case 'spelling':
+      return <TextRenderer question={question} onAnswer={onAnswer} />;
     case 'multiple-choice':
       return <ChoiceRenderer question={question} onAnswer={onAnswer} />;
     case 'translate-choice':
@@ -27,7 +40,7 @@ export function QuestionRenderer({ question, onAnswer }: QuestionRendererProps) 
     case 'listen-and-choose':
       return <ChoiceRenderer question={question} onAnswer={onAnswer} />;
     case 'select-image':
-      return <ChoiceRenderer question={question} onAnswer={onAnswer} />;
+      return <ImageChoiceRenderer question={question} onAnswer={onAnswer} />;
     case 'true-false':
       return <TrueFalseRenderer question={question} onAnswer={onAnswer} />;
     case 'translate-prompt':
@@ -47,7 +60,79 @@ export function QuestionRenderer({ question, onAnswer }: QuestionRendererProps) 
   }
 }
 
-// ---------- Choice (multiple-choice / translate-choice / listen / select-image) ----------
+// ---------- Reference-driven presentation and choice renderers ----------
+
+function InstructionalRenderer({ question }: { question: Extract<Question, { kind: 'instructional-card' }> }) {
+  const { lt, t } = useI18n();
+  return (
+    <div className="space-y-5 text-center">
+      <Prompt text={lt(question.prompt)} />
+      <div className="card p-5 bg-neutral-900 text-white border-neutral-800">
+        {question.image ? (
+          <img src={question.image} alt="" loading="lazy" className="w-28 h-28 object-contain mx-auto mb-4" onError={(event) => { event.currentTarget.style.display = 'none'; }} />
+        ) : <div className="w-24 h-24 rounded-3xl bg-primary-500/20 grid place-items-center mx-auto mb-4"><Volume2 className="w-10 h-10 text-accent-400" /></div>}
+        <p className="font-display text-2xl font-bold" dir="ltr">{question.englishText}</p>
+        <p className="mt-2 text-neutral-300">{lt(question.translation)}</p>
+      </div>
+      <AudioButton audio={question.audio} text={question.englishText} />
+      {question.showMicrophone && <MicrophoneButton />}
+      <button className="btn-primary w-full">{t('common.continue')}</button>
+    </div>
+  );
+}
+
+function ImageChoiceRenderer({ question, onAnswer }: { question: Extract<Question, { kind: 'image-choice' | 'select-image' }>; onAnswer: (r: AnswerResult) => void }) {
+  const [selected, setSelected] = useState<string | null>(null);
+  const [checked, setChecked] = useState(false);
+  const { lt } = useI18n();
+  const isCorrect = selected === question.answer;
+  const handleCheck = () => { if (!selected) return; setChecked(true); onAnswer({ correct: isCorrect }); };
+  return (
+    <div className="space-y-4">
+      <Prompt text={lt(question.prompt)} />
+      <div className="text-center py-3"><p className="font-display text-2xl font-bold text-neutral-900" dir="ltr">{question.stem}</p><AudioButton text={question.stem} compact /></div>
+      <div className="grid grid-cols-2 gap-3">
+        {question.options.map((option) => {
+          const chosen = selected === option.id;
+          const correct = checked && option.id === question.answer;
+          const wrong = checked && chosen && !correct;
+          return <button key={option.id} disabled={checked} onClick={() => setSelected(option.id)} className={`overflow-hidden rounded-2xl border-2 text-center transition-all active:scale-[0.98] ${correct ? 'border-primary-500 bg-primary-50' : wrong ? 'border-error-500 bg-error-50' : chosen ? 'border-primary-400 bg-primary-50' : 'border-neutral-200 bg-white'}`}>
+            <img src={option.image} alt={option.label} loading="lazy" className="w-full aspect-square object-cover bg-neutral-100" onError={(event) => { event.currentTarget.style.display = 'none'; }} />
+            <span className="block p-2 font-semibold text-neutral-800">{option.label}</span>
+          </button>;
+        })}
+      </div>
+      <CheckButton disabled={!selected} checked={checked} isCorrect={isCorrect} onCheck={handleCheck} />
+    </div>
+  );
+}
+
+function StructuredChoiceRenderer({ question, onAnswer }: { question: Extract<Question, { kind: 'word-choice' | 'sentence-choice' | 'fill-blank-choice' }>; onAnswer: (r: AnswerResult) => void }) {
+  const [selected, setSelected] = useState<number | null>(null);
+  const [checked, setChecked] = useState(false);
+  const { lt } = useI18n();
+  const isCorrect = selected === question.answer;
+  const source = question.kind === 'fill-blank-choice' ? question.sentence : lt(question.source);
+  return <div className="space-y-4">
+    <Prompt text={lt(question.prompt)} />
+    <div className="card p-6 text-center"><p className="font-display text-xl font-bold text-neutral-900" dir={question.kind === 'word-choice' ? 'rtl' : 'ltr'}>{source}</p>{question.kind === 'fill-blank-choice' && question.translation && <p className="text-sm text-neutral-500 mt-2">{lt(question.translation)}</p>}</div>
+    <div className="space-y-2.5">{question.options.map((option, index) => <button key={`${option}-${index}`} disabled={checked} onClick={() => setSelected(index)} className={`w-full p-4 rounded-2xl border-2 text-center font-medium text-neutral-800 transition-all ${checked && index === question.answer ? 'border-primary-500 bg-primary-50' : checked && selected === index ? 'border-error-500 bg-error-50' : selected === index ? 'border-primary-400 bg-primary-50' : 'border-neutral-200 bg-white'}`}>{option}</button>)}</div>
+    <CheckButton disabled={selected === null} checked={checked} isCorrect={isCorrect} onCheck={() => { if (selected !== null) { setChecked(true); onAnswer({ correct: isCorrect }); } }} />
+  </div>;
+}
+
+function SpeakingRenderer({ question }: { question: Extract<Question, { kind: 'speaking' }> }) {
+  const { lt, t } = useI18n();
+  return <div className="space-y-5 text-center"><Prompt text={lt(question.prompt)} /><div className="card p-6"><p className="font-display text-2xl font-bold text-neutral-900" dir="ltr">{question.englishText}</p><p className="text-neutral-500 mt-2">{lt(question.translation)}</p></div><div className="flex justify-center gap-4"><AudioButton audio={question.audio} text={question.englishText} /><MicrophoneButton /></div><button className="btn-primary w-full">{t('common.continue')}</button></div>;
+}
+
+function MicrophoneButton() {
+  const [message, setMessage] = useState<string | null>(null);
+  const start = () => setMessage('Microphone practice is available when speech recognition is supported by this browser.');
+  return <div><button onClick={start} className="w-16 h-16 rounded-full bg-accent-400 text-neutral-900 grid place-items-center mx-auto active:scale-95" aria-label="microphone"><Mic className="w-7 h-7" /></button>{message && <p className="text-xs text-neutral-500 mt-2">{message}</p>}</div>;
+}
+
+// ---------- Choice (multiple-choice / translate-choice / listen) ----------
 
 function ChoiceRenderer({ question, onAnswer }: { question: Question; onAnswer: (r: AnswerResult) => void }) {
   const { lt } = useI18n();
@@ -77,7 +162,7 @@ function ChoiceRenderer({ question, onAnswer }: { question: Question; onAnswer: 
       )}
       {question.kind === 'listen-and-choose' && (
         <div className="text-center py-6">
-          <AudioButton />
+          <AudioButton audio={question.audio} />
         </div>
       )}
       {question.kind === 'translate-choice' && (
@@ -173,11 +258,12 @@ function TextRenderer({ question, onAnswer }: { question: Question; onAnswer: (r
   const [checked, setChecked] = useState(false);
   const { lt } = useI18n();
 
-  if (question.kind !== 'translate-prompt' && question.kind !== 'type-what-you-hear' && question.kind !== 'fill-blank') return null;
+  if (question.kind !== 'translate-prompt' && question.kind !== 'type-what-you-hear' && question.kind !== 'fill-blank' && question.kind !== 'spelling') return null;
 
   let display: ReactNode = null;
   if (question.kind === 'translate-prompt') display = <p className="font-display text-xl text-center py-6 text-neutral-800">{lt(question.source)}</p>;
-  else if (question.kind === 'type-what-you-hear') display = <AudioButton />;
+  else if (question.kind === 'type-what-you-hear') display = <AudioButton audio={question.audio} />;
+  else if (question.kind === 'spelling') display = <AudioButton audio={question.audio} />;
   else if (question.kind === 'fill-blank') display = <p className="font-display text-xl text-center py-6 text-neutral-800">{question.sentence}</p>;
 
   const answers = question.answers;
@@ -432,14 +518,17 @@ function Prompt({ text }: { text: string }) {
   return <p className="font-semibold text-neutral-800 text-base mb-1">{text}</p>;
 }
 
-function AudioButton() {
-  return (
-    <div className="text-center py-6">
-      <button className="w-16 h-16 rounded-full bg-primary-100 text-primary-700 grid place-items-center mx-auto active:scale-95">
-        <span className="text-2xl">🔊</span>
-      </button>
-    </div>
-  );
+function AudioButton({ audio, text, compact = false }: { audio?: { src: string }; text?: string; compact?: boolean }) {
+  const { speak } = useSpeech();
+  const [failed, setFailed] = useState(false);
+  const play = () => {
+    if (audio?.src) {
+      const player = new Audio(audio.src);
+      player.onerror = () => { setFailed(true); if (text) speak(text); };
+      void player.play().catch(() => { setFailed(true); if (text) speak(text); });
+    } else if (text) speak(text);
+  };
+  return <div className={compact ? '' : 'text-center py-3'}><button onClick={play} className={`${compact ? 'w-10 h-10' : 'w-16 h-16'} rounded-full bg-primary-100 text-primary-700 grid place-items-center mx-auto active:scale-95`} aria-label="play audio"><Volume2 className={compact ? 'w-5 h-5' : 'w-7 h-7'} /></button>{failed && <p className="text-xs text-neutral-500 mt-2">Audio unavailable; pronunciation fallback used.</p>}</div>;
 }
 
 function CheckButton({

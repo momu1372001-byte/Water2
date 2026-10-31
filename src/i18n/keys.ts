@@ -76,6 +76,11 @@ export const UI_KEYS = [
   'practice.encourage2',
   'practice.encourage3',
   'practice.encourage4',
+  'practice.explain',
+  'practice.grammarNote',
+  'practice.feedbackTitle',
+  'practice.commonMistake',
+  'practice.gotIt',
   'study.flip',
   'study.next',
   'study.prev',
@@ -196,6 +201,8 @@ export const UI_KEYS = [
   'common.continue',
   'common.min',
   'common.of',
+  'common.showHint',
+  'common.hideHint',
 ] as const;
 
 export type UiKey = (typeof UI_KEYS)[number];

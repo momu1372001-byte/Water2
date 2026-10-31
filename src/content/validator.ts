@@ -7,6 +7,13 @@ import type {
 export const SCHEMA_VERSION = '1.0.0';
 
 const VALID_KINDS = new Set<Question['kind']>([
+  'instructional-card',
+  'image-choice',
+  'word-choice',
+  'sentence-choice',
+  'fill-blank-choice',
+  'speaking',
+  'spelling',
   'multiple-choice',
   'select-image',
   'translate-prompt',
@@ -73,6 +80,38 @@ function validateQuestion(
   }
   // Per-kind sanity checks (structural; full type is asserted on cast).
   switch (q.kind as Question['kind']) {
+    case 'instructional-card':
+      if (!isString(q.englishText) || !hasLocalized(q.translation)) {
+        issues.push({ severity: 'error', code: 'schema-mismatch', message: `Question ${q.id} (instructional-card) needs englishText + translation`, source });
+        return null;
+      }
+      break;
+    case 'image-choice':
+      if (!isString(q.stem) || !Array.isArray(q.options) || typeof q.answer !== 'string') {
+        issues.push({ severity: 'error', code: 'schema-mismatch', message: `Question ${q.id} (image-choice) needs stem + options[] + answer:string`, source });
+        return null;
+      }
+      break;
+    case 'word-choice':
+    case 'sentence-choice':
+    case 'fill-blank-choice':
+      if (!Array.isArray(q.options) || typeof q.answer !== 'number') {
+        issues.push({ severity: 'error', code: 'schema-mismatch', message: `Question ${q.id} (${q.kind}) needs options[] + answer:number`, source });
+        return null;
+      }
+      break;
+    case 'speaking':
+      if (!isString(q.englishText) || !hasLocalized(q.translation)) {
+        issues.push({ severity: 'error', code: 'schema-mismatch', message: `Question ${q.id} (speaking) needs englishText + translation`, source });
+        return null;
+      }
+      break;
+    case 'spelling':
+      if (!Array.isArray(q.answers)) {
+        issues.push({ severity: 'error', code: 'schema-mismatch', message: `Question ${q.id} (spelling) needs answers[]`, source });
+        return null;
+      }
+      break;
     case 'multiple-choice':
     case 'translate-choice':
     case 'listen-and-choose': {
@@ -125,6 +164,19 @@ function validateQuestion(
         return null;
       }
       break;
+    }
+  }
+  // Grammar notes + feedback validation (optional, present on all kinds).
+  if (q.grammarNotes !== undefined && !hasLocalized(q.grammarNotes)) {
+    issues.push({ severity: 'warning', code: 'schema-mismatch', message: `Question ${q.id} has grammarNotes but missing required locale (ar)`, source: `${source}#${q.id}` });
+  }
+  if (q.feedback !== undefined) {
+    const f = q.feedback as Record<string, unknown>;
+    if (!hasLocalized(f.explanation)) {
+      issues.push({ severity: 'warning', code: 'schema-mismatch', message: `Question ${q.id} feedback.explanation missing required locale (ar)`, source: `${source}#${q.id}` });
+    }
+    if (f.commonMistake !== undefined && !hasLocalized(f.commonMistake)) {
+      issues.push({ severity: 'warning', code: 'schema-mismatch', message: `Question ${q.id} feedback.commonMistake missing required locale (ar)`, source: `${source}#${q.id}` });
     }
   }
   return q as unknown as Question;
