@@ -1,0 +1,78 @@
+{
+  "$schema": "1.0.0",
+  "id": "lesson-greetings-3",
+  "topicId": "topic-greetings",
+  "orderInTopic": 3,
+  "title": { "ar": "كيف حالك؟", "fr": "Comment ça va ?", "hi": "आप कैसे हैं?", "en": "How Are You?" },
+  "subtitle": { "ar": "السؤال عن الحالة والردّ", "fr": "Demander et répondre à l'état", "hi": "हाल पूछना और जवाब देना", "en": "Asking and answering how you are" },
+
+  "vocabulary": [
+    { "id": "v-how-are-you", "word": "How are you?", "ipa": "/haʊ ɑːr juː/", "partOfSpeech": "phrase", "emoji": "🤝", "translations": { "ar": "كيف حالك؟", "fr": "Comment ça va ?", "hi": "आप कैसे हैं?" }, "example": { "english": "Hi! How are you today?", "translations": { "ar": "أهلاً! كيف حالك اليوم؟", "fr": "Salut ! Comment ça va aujourd'hui ?", "hi": "हाय! आज आप कैसे हैं?" } } },
+    { "id": "v-im-fine", "word": "I'm fine", "ipa": "/aɪm ˈfaɪn/", "partOfSpeech": "phrase", "emoji": "😊", "translations": { "ar": "أنا بخير", "fr": "je vais bien", "hi": "मैं ठीक हूँ" }, "example": { "english": "I'm fine, thank you.", "translations": { "ar": "أنا بخير، شكراً.", "fr": "Je vais bien, merci.", "hi": "मैं ठीक हूँ, धन्यवाद।" } } },
+    { "id": "v-im-good", "word": "I'm good", "ipa": "/aɪm ˈɡʊd/", "partOfSpeech": "phrase", "emoji": "🙂", "translations": { "ar": "أنا جيد", "fr": "ça va bien", "hi": "मैं अच्छा हूँ" }, "example": { "english": "I'm good. And you?", "translations": { "ar": "أنا جيد. وأنت؟", "fr": "Ça va bien. Et toi ?", "hi": "मैं अच्छा हूँ। और आप?" } } },
+    { "id": "v-im-ok", "word": "I'm okay", "ipa": "/aɪm ˌoʊˈkeɪ/", "partOfSpeech": "phrase", "emoji": "😌", "translations": { "ar": "أنا تمام", "fr": "ça va", "hi": "मैं ठीक हूँ" }, "example": { "english": "I'm okay, just tired.", "translations": { "ar": "أنا تمام، فقط متعب.", "fr": "Ça va, juste fatigué.", "hi": "मैं ठीक हूँ, बस थका हूँ।" } } },
+    { "id": "v-and-you", "word": "And you?", "ipa": "/ænd juː/", "partOfSpeech": "phrase", "emoji": "👈", "translations": { "ar": "وأنت؟", "fr": "Et toi ?", "hi": "और आप?" }, "example": { "english": "I'm fine. And you?", "translations": { "ar": "أنا بخير. وأنت؟", "fr": "Je vais bien. Et toi ?", "hi": "मैं ठीक हूँ। और आप?" } } },
+    { "id": "v-thanks", "word": "thanks", "ipa": "/θæŋks/", "partOfSpeech": "noun", "emoji": "🙏", "translations": { "ar": "شكراً", "fr": "merci", "hi": "धन्यवाद" }, "example": { "english": "Thanks, I'm great.", "translations": { "ar": "شكراً, أنا رائع.", "fr": "Merci, ça va super.", "hi": "धन्यवाद, मैं बढ़िया हूँ।" } } }
+  ],
+
+  "sentences": [
+    { "id": "s-1", "english": "How are you? I'm fine, thanks.", "translations": { "ar": "كيف حالك؟ أنا بخير، شكراً.", "fr": "Comment ça va ? Je vais bien, merci.", "hi": "आप कैसे हैं? मैं ठीक हूँ, धन्यवाद।" } },
+    { "id": "s-2", "english": "I'm good. And you?", "translations": { "ar": "أنا جيد. وأنت؟", "fr": "Ça va bien. Et toi ?", "hi": "मैं अच्छा हूँ। और आप?" } },
+    { "id": "s-3", "english": "I'm okay, just a little tired.", "translations": { "ar": "أنا تمام، فقط متعب قليلاً.", "fr": "Ça va, juste un peu fatigué.", "hi": "मैं ठीक हूँ, बस थोड़ा थका हूँ।" } }
+  ],
+
+  "grammar": [
+    {
+      "id": "g-contractions",
+      "title": { "ar": "الاختصارات: I'm", "fr": "Les contractions : I'm", "hi": "संक्षिप्त रूप: I'm", "en": "Contractions: I'm" },
+      "body": {
+        "ar": "I'm اختصار لـ I am. نقول I'm fine أو I'm good بدلاً من I am fine. نستخدم And you? لإعادة السؤال.",
+        "fr": "I'm est la contraction de I am. On dit I'm fine ou I'm good. And you? sert à retourner la question.",
+        "hi": "I'm, I am का संक्षिप्त रूप है। हम I'm fine या I'm good बोलते हैं। And you? से सवाल लौटाते हैं।",
+        "en": "I'm is short for I am. Say I'm fine or I'm good. And you? returns the question."
+      }
+    }
+  ],
+
+  "flashcards": [
+    { "id": "fc-1", "front": { "ar": "كيف حالك؟", "fr": "Comment ça va ?", "hi": "आप कैसे हैं?" }, "back": "How are you?", "vocabId": "v-how-are-you" },
+    { "id": "fc-2", "front": { "ar": "أنا بخير", "fr": "je vais bien", "hi": "मैं ठीक हूँ" }, "back": "I'm fine", "vocabId": "v-im-fine" },
+    { "id": "fc-3", "front": { "ar": "أنا جيد", "fr": "ça va bien", "hi": "मैं अच्छा हूँ" }, "back": "I'm good", "vocabId": "v-im-good" },
+    { "id": "fc-4", "front": { "ar": "أنا تمام", "fr": "ça va", "hi": "मैं ठीक हूँ" }, "back": "I'm okay", "vocabId": "v-im-ok" },
+    { "id": "fc-5", "front": { "ar": "وأنت؟", "fr": "Et toi ?", "hi": "और आप?" }, "back": "And you?", "vocabId": "v-and-you" },
+    { "id": "fc-6", "front": { "ar": "شكراً", "fr": "merci", "hi": "धन्यवाद" }, "back": "thanks", "vocabId": "v-thanks" }
+  ],
+
+  "practice": {
+    "questions": [
+      { "id": "q1", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "ما معنى How are you?", "fr": "Que signifie How are you?", "hi": "How are you? का अर्थ?" }, "stem": "How are you?", "options": ["ما اسمك؟", "كيف حالك؟", "كم عمرك؟", "من أين أنت؟"], "answer": 1 },
+      { "id": "q2", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "ما معنى I'm fine", "fr": "Que signifie I'm fine?", "hi": "I'm fine का अर्थ?" }, "stem": "I'm fine", "options": ["أنا بخير", "أنا جائع", "أنا متعب", "أنا سعيد"], "answer": 0 },
+      { "id": "q3", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "ما معنى And you?", "fr": "Que signifie And you?", "hi": "And you? का अर्थ?" }, "stem": "And you?", "options": ["من أنت؟", "وأنت؟", "أين أنت؟", "متى؟"], "answer": 1 },
+      { "id": "q4", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "ما معنى I'm good", "fr": "Que signifie I'm good?", "hi": "I'm good का अर्थ?" }, "stem": "I'm good", "options": ["أنا غاضب", "أنا جيد", "أنا حزين", "أنا مشغول"], "answer": 1 },
+      { "id": "q5", "kind": "translate-choice", "difficulty": 1, "prompt": { "ar": "اختر الترجمة الصحيحة لـ كيف حالك؟", "fr": "Choisissez la bonne traduction", "hi": "सही अनुवाद चुनें" }, "source": { "ar": "كيف حالك؟", "fr": "Comment ça va ?", "hi": "आप कैसे हैं?" }, "options": ["How are you?", "What's your name?", "How old are you?", "Where are you?"], "answer": 0 },
+      { "id": "q6", "kind": "translate-choice", "difficulty": 1, "prompt": { "ar": "اختر الترجمة الصحيحة لـ أنا بخير", "fr": "Choisissez la bonne traduction", "hi": "सही अनुवाद चुनें" }, "source": { "ar": "أنا بخير", "fr": "je vais bien", "hi": "मैं ठीक हूँ" }, "options": ["I'm tired", "I'm fine", "I'm hungry", "I'm late"], "answer": 1 },
+      { "id": "q7", "kind": "translate-choice", "difficulty": 1, "prompt": { "ar": "اختر الترجمة الصحيحة لـ وأنت؟", "fr": "Choisissez la bonne traduction", "hi": "सही अनुवाद चुनें" }, "source": { "ar": "وأنت؟", "fr": "Et toi ?", "hi": "और आप?" }, "options": ["Who are you?", "And you?", "Where are you?", "Are you?"], "answer": 1 },
+      { "id": "q8", "kind": "translate-prompt", "difficulty": 2, "prompt": { "ar": "اكتب بالإنجليزية: كيف حالك؟", "fr": "Écrivez en anglais", "hi": "अंग्रेज़ी में लिखें" }, "source": { "ar": "كيف حالك؟", "fr": "Comment ça va ?", "hi": "आप कैसे हैं?" }, "answers": ["How are you?"] },
+      { "id": "q9", "kind": "translate-prompt", "difficulty": 2, "prompt": { "ar": "اكتب بالإنجليزية: أنا بخير", "fr": "Écrivez en anglais", "hi": "अंग्रेज़ी में लिखें" }, "source": { "ar": "أنا بخير", "fr": "je vais bien", "hi": "मैं ठीक हूँ" }, "answers": ["I'm fine", "I am fine"] },
+      { "id": "q10", "kind": "translate-prompt", "difficulty": 2, "prompt": { "ar": "اكتب بالإنجليزية: وأنت؟", "fr": "Écrivez en anglais", "hi": "अंग्रेज़ी में लिखें" }, "source": { "ar": "وأنت؟", "fr": "Et toi ?", "hi": "और आप?" }, "answers": ["And you?"] },
+      { "id": "q11", "kind": "fill-blank", "difficulty": 2, "prompt": { "ar": "أكمل الجملة", "fr": "Complétez", "hi": "वाक्य पूरा करें" }, "sentence": "Hi! ___ are you today?", "answers": ["How", "how"] },
+      { "id": "q12", "kind": "fill-blank", "difficulty": 2, "prompt": { "ar": "أكمل: أنا بخير وأنت؟", "fr": "Complétez", "hi": "वाक्य पूरा करें" }, "sentence": "I'm fine. ___ you?", "answers": ["And", "and"] },
+      { "id": "q13", "kind": "true-false", "difficulty": 1, "prompt": { "ar": "هل العبارة صحيحة؟", "fr": "Vrai ou faux ?", "hi": "सही या गलत?" }, "statement": "I'm is a contraction of I am.", "isTrue": true },
+      { "id": "q14", "kind": "true-false", "difficulty": 1, "prompt": { "ar": "هل العبارة صحيحة؟", "fr": "Vrai ou faux ?", "hi": "सही या गलत?" }, "statement": "And you? means ما اسمك؟ in Arabic.", "isTrue": false },
+      { "id": "q15", "kind": "word-order", "difficulty": 2, "prompt": { "ar": "رتّب الكلمات", "fr": "Remettez les mots en ordre", "hi": "शब्दों को क्रम में लगाएँ" }, "tokens": ["How", "are", "you", "today"], "shuffled": ["today", "you", "How", "are"] },
+      { "id": "q16", "kind": "word-order", "difficulty": 2, "prompt": { "ar": "رتّب الكلمات", "fr": "Remettez les mots en ordre", "hi": "शब्दों को क्रम में लगाएँ" }, "tokens": ["I'm", "fine", "thank", "you"], "shuffled": ["you", "fine", "I'm", "thank"] },
+      { "id": "q17", "kind": "tap-to-build", "difficulty": 2, "prompt": { "ar": "ابنِ الجملة: أنا جيد وأنت؟", "fr": "Formez la phrase", "hi": "वाक्य बनाएँ" }, "target": "I'm good And you", "bank": ["I'm", "good", "And", "you", "How", "fine"] },
+      { "id": "q18", "kind": "tap-to-build", "difficulty": 3, "prompt": { "ar": "ابنِ الجملة: كيف حالك اليوم؟", "fr": "Formez la phrase", "hi": "वाक्य बनाएँ" }, "target": "How are you today", "bank": ["How", "are", "you", "today", "good", "fine"] },
+      { "id": "q19", "kind": "match-pairs", "difficulty": 2, "prompt": { "ar": "طابق الأسئلة بالردود", "fr": "Associez questions et réponses", "hi": "प्रश्न और उत्तर जोड़ें" }, "pairs": [ { "left": "How are you?", "right": "كيف حالك؟" }, { "left": "I'm fine", "right": "أنا بخير" }, { "left": "And you?", "right": "وأنت؟" }, { "left": "I'm good", "right": "أنا جيد" } ] },
+      { "id": "q20", "kind": "match-pairs", "difficulty": 2, "prompt": { "ar": "طابق العبارات", "fr": "Associez les expressions", "hi": "वाक्यांश जोड़ें" }, "pairs": [ { "left": "I'm okay", "right": "أنا تمام" }, { "left": "thanks", "right": "شكراً" }, { "left": "I'm fine", "right": "أنا بخير" } ] },
+      { "id": "q21", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "أي ردّ يعني أنا تمام؟", "fr": "Quelle réponse signifie ça va ?", "hi": "कौन-सा उत्तर ठीक हूँ कहता है?" }, "stem": "I'm okay", "options": ["I'm fine", "I'm okay", "I'm good", "I'm tired"], "answer": 1 },
+      { "id": "q22", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "أي سؤال يسأل عن الحالة؟", "fr": "Quelle question demande l'état ?", "hi": "कौन-सा प्रश्न हाल पूछता है?" }, "stem": "How are you?", "options": ["How are you?", "What's this?", "Where are you?", "Who are you?"], "answer": 0 },
+      { "id": "q23", "kind": "translate-choice", "difficulty": 1, "prompt": { "ar": "اختر الترجمة الصحيحة لـ أنا تمام", "fr": "Choisissez la bonne traduction", "hi": "सही अनुवाद चुनें" }, "source": { "ar": "أنا تمام", "fr": "ça va", "hi": "मैं ठीक हूँ" }, "options": ["I'm okay", "I'm tired", "I'm late", "I'm happy"], "answer": 0 },
+      { "id": "q24", "kind": "translate-prompt", "difficulty": 2, "prompt": { "ar": "اكتب بالإنجليزية: أنا جيد", "fr": "Écrivez en anglais", "hi": "अंग्रेज़ी में लिखें" }, "source": { "ar": "أنا جيد", "fr": "ça va bien", "hi": "मैं अच्छा हूँ" }, "answers": ["I'm good", "I am good"] },
+      { "id": "q25", "kind": "fill-blank", "difficulty": 2, "prompt": { "ar": "أكمل: أنا بخير شكراً", "fr": "Complétez", "hi": "वाक्य पूरा करें" }, "sentence": "I'm ___, thank you.", "answers": ["fine", "Fine"] },
+      { "id": "q26", "kind": "word-order", "difficulty": 3, "prompt": { "ar": "رتّب الكلمات", "fr": "Remettez les mots en ordre", "hi": "शब्दों को क्रम में लगाएँ" }, "tokens": ["I'm", "okay", "just", "tired"], "shuffled": ["tired", "I'm", "okay", "just"] },
+      { "id": "q27", "kind": "true-false", "difficulty": 1, "prompt": { "ar": "هل العبارة صحيحة؟", "fr": "Vrai ou faux ?", "hi": "सही या गलत?" }, "statement": "Thanks and thank you mean almost the same.", "isTrue": true },
+      { "id": "q28", "kind": "match-pairs", "difficulty": 2, "prompt": { "ar": "طابق كل عبارة إنجليزية بمعناها", "fr": "Associez chaque expression à son sens", "hi": "हर वाक्यांश को अर्थ से जोड़ें" }, "pairs": [ { "left": "How are you?", "right": "كيف حالك؟" }, { "left": "I'm fine", "right": "أنا بخير" }, { "left": "And you?", "right": "وأنت؟" }, { "left": "I'm okay", "right": "أنا تمام" } ] }
+    ]
+  }
+}

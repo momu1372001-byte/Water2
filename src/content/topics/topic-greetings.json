@@ -1,0 +1,12 @@
+{
+  "id": "topic-greetings",
+  "unitId": "unit-greetings",
+  "title": { "ar": "أساسيات التحية", "fr": "Bases des salutations", "hi": "अभिवादन की मूल बातें", "en": "Greeting Basics" },
+  "description": {
+    "ar": "كيف تقول مرحباً وتردّ على التحية في أوقات اليوم المختلفة.",
+    "fr": "Comment dire bonjour et répondre aux salutations selon le moment.",
+    "hi": "दिन के अलग-अलग समय में हैलो कहना और जवाब देना।",
+    "en": "How to say hello and respond at different times of day."
+  },
+  "lessonIds": ["lesson-greetings-1", "lesson-greetings-2", "lesson-greetings-3"]
+}

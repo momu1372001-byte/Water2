@@ -1,0 +1,78 @@
+{
+  "$schema": "1.0.0",
+  "id": "lesson-greetings-1",
+  "topicId": "topic-greetings",
+  "orderInTopic": 1,
+  "title": { "ar": "مرحباً ووداعاً", "fr": "Bonjour et au revoir", "hi": "हैलो और अलविदा", "en": "Hello and Goodbye" },
+  "subtitle": { "ar": "أول كلماتك في الإنجليزية", "fr": "Vos premiers mots en anglais", "hi": "अंग्रेज़ी में आपके पहले शब्द", "en": "Your first English words" },
+
+  "vocabulary": [
+    { "id": "v-hello", "word": "hello", "ipa": "/həˈloʊ/", "partOfSpeech": "interjection", "emoji": "👋", "translations": { "ar": "مرحباً", "fr": "bonjour", "hi": "नमस्ते" }, "example": { "english": "Hello! How are you?", "translations": { "ar": "مرحباً! كيف حالك؟", "fr": "Bonjour ! Comment ça va ?", "hi": "नमस्ते! आप कैसे हैं?" } } },
+    { "id": "v-hi", "word": "hi", "ipa": "/haɪ/", "partOfSpeech": "interjection", "emoji": "👋", "translations": { "ar": "أهلاً", "fr": "salut", "hi": "हाय" }, "example": { "english": "Hi, I'm Sam.", "translations": { "ar": "أهلاً، أنا سام.", "fr": "Salut, je suis Sam.", "hi": "हाय, मैं सैम हूँ।" } } },
+    { "id": "v-goodbye", "word": "goodbye", "ipa": "/ɡʊdˈbaɪ/", "partOfSpeech": "interjection", "emoji": "🙋", "translations": { "ar": "وداعاً", "fr": "au revoir", "hi": "अलविदा" }, "example": { "english": "Goodbye! See you tomorrow.", "translations": { "ar": "وداعاً! أراك غداً.", "fr": "Au revoir ! À demain.", "hi": "अलविदा! कल मिलते हैं।" } } },
+    { "id": "v-bye", "word": "bye", "ipa": "/baɪ/", "partOfSpeech": "interjection", "emoji": "👋", "translations": { "ar": "مع السلامة", "fr": "à la revoyure", "hi": "बाय" }, "example": { "english": "Bye! Have a good day.", "translations": { "ar": "مع السلامة! يوماً سعيداً.", "fr": "Salut ! Bonne journée.", "hi": "बाय! शुभ दिन।" } } },
+    { "id": "v-please", "word": "please", "ipa": "/pliːz/", "partOfSpeech": "adverb", "emoji": "🥺", "translations": { "ar": "من فضلك", "fr": "s'il vous plaît", "hi": "कृपया" }, "example": { "english": "Please sit down.", "translations": { "ar": "من فضلك اجلس.", "fr": "Asseyez-vous s'il vous plaît.", "hi": "कृपया बैठ जाइए।" } } },
+    { "id": "v-thank-you", "word": "thank you", "ipa": "/ˈθæŋk juː/", "partOfSpeech": "phrase", "emoji": "🙏", "translations": { "ar": "شكراً لك", "fr": "merci", "hi": "धन्यवाद" }, "example": { "english": "Thank you for your help.", "translations": { "ar": "شكراً لك على مساعدتك.", "fr": "Merci pour ton aide.", "hi": "आपकी मदद के लिए धन्यवाद।" } } }
+  ],
+
+  "sentences": [
+    { "id": "s-1", "english": "Hello, how are you?", "translations": { "ar": "مرحباً، كيف حالك؟", "fr": "Bonjour, comment ça va ?", "hi": "नमस्ते, आप कैसे हैं?" } },
+    { "id": "s-2", "english": "Hi, nice to meet you.", "translations": { "ar": "أهلاً، سعيد بلقائك.", "fr": "Salut, enchanté.", "hi": "हाय, आपसे मिलकर खुशी हुई।" } },
+    { "id": "s-3", "english": "Goodbye and see you soon.", "translations": { "ar": "وداعاً وأراك قريباً.", "fr": "Au revoir et à bientôt.", "hi": "अलविदा, जल्द मिलते हैं।" } }
+  ],
+
+  "grammar": [
+    {
+      "id": "g-greeting-times",
+      "title": { "ar": "متى نستخدم مرحباً؟", "fr": "Quand utiliser bonjour ?", "hi": "नमस्ते कब बोलें?", "en": "When to use hello?" },
+      "body": {
+        "ar": "كلمة Hello مناسبة في أي وقت من اليوم، بينما Hi غير رسمية أكثر وتُستخدم مع الأصدقاء. Goodbye تُقال عند المغادرة.",
+        "fr": "Hello convient à tout moment, tandis que Hi est plus familier et s'utilise entre amis. Goodbye se dit en partant.",
+        "hi": "Hello दिन में कभी भी ठीक है, जबकि Hi अधिक अनौपचारिक है और दोस्तों के बीच होता है। Goodbye जाते समय बोलते हैं।",
+        "en": "Hello fits any time, Hi is more informal among friends. Goodbye is said when leaving."
+      }
+    }
+  ],
+
+  "flashcards": [
+    { "id": "fc-1", "front": { "ar": "مرحباً", "fr": "bonjour", "hi": "नमस्ते" }, "back": "hello", "vocabId": "v-hello" },
+    { "id": "fc-2", "front": { "ar": "أهلاً", "fr": "salut", "hi": "हाय" }, "back": "hi", "vocabId": "v-hi" },
+    { "id": "fc-3", "front": { "ar": "وداعاً", "fr": "au revoir", "hi": "अलविदा" }, "back": "goodbye", "vocabId": "v-goodbye" },
+    { "id": "fc-4", "front": { "ar": "مع السلامة", "fr": "à la revoyure", "hi": "बाय" }, "back": "bye", "vocabId": "v-bye" },
+    { "id": "fc-5", "front": { "ar": "من فضلك", "fr": "s'il vous plaît", "hi": "कृपया" }, "back": "please", "vocabId": "v-please" },
+    { "id": "fc-6", "front": { "ar": "شكراً لك", "fr": "merci", "hi": "धन्यवाद" }, "back": "thank you", "vocabId": "v-thank-you" }
+  ],
+
+  "practice": {
+    "questions": [
+      { "id": "q1", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "ما معنى كلمة Hello؟", "fr": "Que signifie Hello ?", "hi": "Hello का अर्थ क्या है?" }, "stem": "hello", "options": ["وداعاً", "مرحباً", "شكراً", "نعم"], "answer": 1 },
+      { "id": "q2", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "ما معنى Goodbye؟", "fr": "Que signifie Goodbye ?", "hi": "Goodbye का अर्थ क्या है?" }, "stem": "goodbye", "options": ["مرحباً", "وداعاً", "من فضلك", "لا"], "answer": 1 },
+      { "id": "q3", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "ما معنى Thank you؟", "fr": "Que signifie Thank you ?", "hi": "Thank you का अर्थ?" }, "stem": "thank you", "options": ["شكراً لك", "آسف", "وداعاً", "أهلاً"], "answer": 0 },
+      { "id": "q4", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "ما معنى Please؟", "fr": "Que signifie Please ?", "hi": "Please का अर्थ?" }, "stem": "please", "options": ["نعم", "من فضلك", "مرحباً", "شكراً"], "answer": 1 },
+      { "id": "q5", "kind": "translate-choice", "difficulty": 1, "prompt": { "ar": "اختر الترجمة الصحيحة لـ Hello", "fr": "Choisissez la bonne traduction de Hello", "hi": "Hello का सही अनुवाद चुनें" }, "source": { "ar": "مرحباً", "fr": "bonjour", "hi": "नमस्ते" }, "options": ["hello", "goodbye", "thanks", "please"], "answer": 0 },
+      { "id": "q6", "kind": "translate-choice", "difficulty": 1, "prompt": { "ar": "اختر الترجمة الصحيحة لـ وداعاً", "fr": "Choisissez la bonne traduction de au revoir", "hi": "अलविदा का सही अनुवाद चुनें" }, "source": { "ar": "وداعاً", "fr": "au revoir", "hi": "अलविदा" }, "options": ["hello", "bye", "hi", "yes"], "answer": 1 },
+      { "id": "q7", "kind": "translate-prompt", "difficulty": 2, "prompt": { "ar": "اكتب بالإنجليزية: مرحباً", "fr": "Écrivez en anglais : bonjour", "hi": "अंग्रेज़ी में लिखें: नमस्ते" }, "source": { "ar": "مرحباً", "fr": "bonjour", "hi": "नमस्ते" }, "answers": ["hello", "hi"] },
+      { "id": "q8", "kind": "translate-prompt", "difficulty": 2, "prompt": { "ar": "اكتب بالإنجليزية: شكراً لك", "fr": "Écrivez en anglais : merci", "hi": "अंग्रेज़ी में लिखें: धन्यवाद" }, "source": { "ar": "شكراً لك", "fr": "merci", "hi": "धन्यवाद" }, "answers": ["thank you", "thanks"] },
+      { "id": "q9", "kind": "translate-prompt", "difficulty": 2, "prompt": { "ar": "اكتب بالإنجليزية: من فضلك", "fr": "Écrivez en anglais : s'il vous plaît", "hi": "अंग्रेज़ी में लिखें: कृपया" }, "source": { "ar": "من فضلك", "fr": "s'il vous plaît", "hi": "कृपया" }, "answers": ["please"] },
+      { "id": "q10", "kind": "fill-blank", "difficulty": 2, "prompt": { "ar": "أكمل الجملة", "fr": "Complétez la phrase", "hi": "वाक्य पूरा करें" }, "sentence": "___! How are you?", "answers": ["Hello", "Hi"] },
+      { "id": "q11", "kind": "fill-blank", "difficulty": 2, "prompt": { "ar": "أكمل الجملة", "fr": "Complétez la phrase", "hi": "वाक्य पूरा करें" }, "sentence": "Goodbye! See you ___ .", "answers": ["tomorrow", "soon", "later"] },
+      { "id": "q12", "kind": "true-false", "difficulty": 1, "prompt": { "ar": "هل العبارة صحيحة؟", "fr": "Cette affirmation est-elle vraie ?", "hi": "क्या यह कथन सही है?" }, "statement": "Hi is more informal than Hello.", "isTrue": true },
+      { "id": "q13", "kind": "true-false", "difficulty": 1, "prompt": { "ar": "هل العبارة صحيحة؟", "fr": "Cette affirmation est-elle vraie ?", "hi": "क्या यह कथन सही है?" }, "statement": "Goodbye means مرحباً in Arabic.", "isTrue": false },
+      { "id": "q14", "kind": "word-order", "difficulty": 2, "prompt": { "ar": "رتّب الكلمات", "fr": "Remettez les mots en ordre", "hi": "शब्दों को क्रम में लगाएँ" }, "tokens": ["Hello", "how", "are", "you"], "shuffled": ["are", "Hello", "you", "how"] },
+      { "id": "q15", "kind": "word-order", "difficulty": 2, "prompt": { "ar": "رتّب الكلمات", "fr": "Remettez les mots en ordre", "hi": "शब्दों को क्रम में लगाएँ" }, "tokens": ["Thank", "you", "for", "your", "help"], "shuffled": ["for", "help", "Thank", "your", "you"] },
+      { "id": "q16", "kind": "tap-to-build", "difficulty": 2, "prompt": { "ar": "ابنِ الجملة: مع السلامة! يوماً سعيداً", "fr": "Formez la phrase : Salut ! Bonne journée", "hi": "वाक्य बनाएँ: बाय! शुभ दिन" }, "target": "Bye have a good day", "bank": ["Bye", "have", "a", "good", "day", "Hello", "thanks"] },
+      { "id": "q17", "kind": "tap-to-build", "difficulty": 3, "prompt": { "ar": "ابنِ الجملة: مرحباً! كيف حالك؟", "fr": "Formez la phrase : Bonjour ! Comment ça va ?", "hi": "वाक्य बनाएँ: नमस्ते! आप कैसे हैं?" }, "target": "Hello how are you", "bank": ["Hello", "how", "are", "you", "goodbye", "thanks"] },
+      { "id": "q18", "kind": "match-pairs", "difficulty": 2, "prompt": { "ar": "طابق الكلمات الإنجليزية مع معانيها", "fr": "Associez les mots anglais à leur sens", "hi": "अंग्रेज़ी शब्दों को उनके अर्थ से जोड़ें" }, "pairs": [ { "left": "hello", "right": "مرحباً" }, { "left": "goodbye", "right": "وداعاً" }, { "left": "thank you", "right": "شكراً" }, { "left": "please", "right": "من فضلك" } ] },
+      { "id": "q19", "kind": "match-pairs", "difficulty": 2, "prompt": { "ar": "طابق الترحيبات", "fr": "Associez les salutations", "hi": "अभिवादन जोड़ें" }, "pairs": [ { "left": "Hi", "right": "أهلاً" }, { "left": "Bye", "right": "مع السلامة" }, { "left": "Hello", "right": "مرحباً" } ] },
+      { "id": "q20", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "أي كلمة تعني أهلاً (غير رسمية)؟", "fr": "Quel mot signifie salut (familier) ?", "hi": "कौन-सा शब्द अनौपचारिक हाय कहता है?" }, "stem": "hi", "options": ["hello", "hi", "goodbye", "please"], "answer": 1 },
+      { "id": "q21", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "أي كلمة تُقال عند المغادرة؟", "fr": "Quel mot dit-on en partant ?", "hi": "जाते समय कौन-सा शब्द बोलते हैं?" }, "stem": "goodbye", "options": ["hello", "hi", "thank you", "goodbye"], "answer": 3 },
+      { "id": "q22", "kind": "translate-choice", "difficulty": 1, "prompt": { "ar": "اختر الترجمة الصحيحة لـ من فضلك", "fr": "Choisissez la bonne traduction de s'il vous plaît", "hi": "कृपया का सही अनुवाद चुनें" }, "source": { "ar": "من فضلك", "fr": "s'il vous plaît", "hi": "कृपया" }, "options": ["please", "thanks", "hello", "bye"], "answer": 0 },
+      { "id": "q23", "kind": "translate-choice", "difficulty": 1, "prompt": { "ar": "اختر الترجمة الصحيحة لـ شكراً", "fr": "Choisissez la bonne traduction de merci", "hi": "धन्यवाद का सही अनुवाद चुनें" }, "source": { "ar": "شكراً", "fr": "merci", "hi": "धन्यवाद" }, "options": ["please", "thank you", "goodbye", "hello"], "answer": 1 },
+      { "id": "q24", "kind": "fill-blank", "difficulty": 2, "prompt": { "ar": "أكمل: من فضلك اجلس", "fr": "Complétez : asseyez-vous s'il vous plaît", "hi": "पूरा करें: कृपया बैठ जाइए" }, "sentence": "___ sit down.", "answers": ["Please", "please"] },
+      { "id": "q25", "kind": "word-order", "difficulty": 3, "prompt": { "ar": "رتّب الكلمات", "fr": "Remettez les mots en ordre", "hi": "शब्दों को क्रम में लगाएँ" }, "tokens": ["Please", "sit", "down"], "shuffled": ["sit", "Please", "down"] },
+      { "id": "q26", "kind": "true-false", "difficulty": 1, "prompt": { "ar": "هل العبارة صحيحة؟", "fr": "Cette affirmation est-elle vraie ?", "hi": "क्या यह कथन सही है?" }, "statement": "Please is used to be polite when asking.", "isTrue": true },
+      { "id": "q27", "kind": "true-false", "difficulty": 1, "prompt": { "ar": "هل العبارة صحيحة؟", "fr": "Cette affirmation est-elle vraie ?", "hi": "क्या यह कथन सही है?" }, "statement": "Bye means مرحباً in Arabic.", "isTrue": false },
+      { "id": "q28", "kind": "match-pairs", "difficulty": 2, "prompt": { "ar": "طابق كل كلمة إنجليزية بمعناها", "fr": "Associez chaque mot anglais à son sens", "hi": "हर अंग्रेज़ी शब्द को अर्थ से जोड़ें" }, "pairs": [ { "left": "hello", "right": "مرحباً" }, { "left": "bye", "right": "مع السلامة" }, { "left": "hi", "right": "أهلاً" }, { "left": "please", "right": "من فضلك" } ] }
+    ]
+  }
+}

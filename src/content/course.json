@@ -1,0 +1,14 @@
+{
+  "$schema": "1.0.0",
+  "id": "en-core",
+  "title": { "ar": "الإنجليزية للجميع", "fr": "Anglais pour tous", "hi": "सबके लिए अंग्रेज़ी", "en": "English for Everyone" },
+  "description": {
+    "ar": "رحلة تعليمية شاملة لتعلم اللغة الإنجليزية من البداية.",
+    "fr": "Un parcours complet pour apprendre l'anglais dès le début.",
+    "hi": "शुरुआत से अंग्रेज़ी सीखने का संपूर्ण कार्यक्रम।",
+    "en": "A complete journey to learn English from scratch."
+  },
+  "targetLanguage": "en",
+  "defaultInterfaceLanguage": "ar",
+  "unitIds": ["unit-greetings"]
+}

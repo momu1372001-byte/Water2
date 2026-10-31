@@ -1,0 +1,12 @@
+{
+  "id": "unit-greetings",
+  "title": { "ar": "التحيات والتعارف", "fr": "Salutations et présentations", "hi": "अभिवादन और परिचय", "en": "Greetings & Introductions" },
+  "description": {
+    "ar": "تعلم كيفية إلقاء التحية وتقديم نفسك والتحدث مع الآخرين.",
+    "fr": "Apprenez à saluer, vous présenter et échanger avec les autres.",
+    "hi": "अभिवादन करना, परिचय देना और बातचीत करना सीखें।",
+    "en": "Learn to greet, introduce yourself, and talk with others."
+  },
+  "topicIds": ["topic-greetings"],
+  "order": 1
+}

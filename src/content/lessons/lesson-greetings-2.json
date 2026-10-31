@@ -1,0 +1,76 @@
+{
+  "$schema": "1.0.0",
+  "id": "lesson-greetings-2",
+  "topicId": "topic-greetings",
+  "orderInTopic": 2,
+  "title": { "ar": "تحية الصباح والمساء", "fr": "Bonjour, bonsoir", "hi": "सुबह और शाम का अभिवादन", "en": "Morning and Evening Greetings" },
+  "subtitle": { "ar": "التحية حسب وقت اليوم", "fr": "Saluer selon le moment de la journée", "hi": "दिन के समय के अनुसार अभिवादन", "en": "Greetings by time of day" },
+
+  "vocabulary": [
+    { "id": "v-morning", "word": "good morning", "ipa": "/ɡʊd ˈmɔːrnɪŋ/", "partOfSpeech": "phrase", "emoji": "🌅", "translations": { "ar": "صباح الخير", "fr": "bonjour (matin)", "hi": "सुप्रभात" }, "example": { "english": "Good morning! Did you sleep well?", "translations": { "ar": "صباح الخير! هل نمت جيداً؟", "fr": "Bonjour ! As-tu bien dormi ?", "hi": "सुप्रभात! आप अच्छा सोए?" } } },
+    { "id": "v-afternoon", "word": "good afternoon", "ipa": "/ɡʊd ˌæftərˈnuːn/", "partOfSpeech": "phrase", "emoji": "☀️", "translations": { "ar": "مساء الخير (بعد الظهر)", "fr": "bon après-midi", "hi": "शुभ अपराह्न" }, "example": { "english": "Good afternoon. How can I help you?", "translations": { "ar": "مساء الخير. كيف يمكنني مساعدتك؟", "fr": "Bon après-midi. Comment puis-je aider ?", "hi": "शुभ अपराह्न। मैं कैसे मदद कर सकता हूँ?" } } },
+    { "id": "v-evening", "word": "good evening", "ipa": "/ɡʊd ˈiːvnɪŋ/", "partOfSpeech": "phrase", "emoji": "🌆", "translations": { "ar": "مساء الخير", "fr": "bonsoir", "hi": "शुभ संध्या" }, "example": { "english": "Good evening. Welcome to our home.", "translations": { "ar": "مساء الخير. أهلاً بك في بيتنا.", "fr": "Bonsoir. Bienvenue chez nous.", "hi": "शुभ संध्या। हमारे घर में आपका स्वागत है।" } } },
+    { "id": "v-night", "word": "good night", "ipa": "/ɡʊd ˈnaɪt/", "partOfSpeech": "phrase", "emoji": "🌙", "translations": { "ar": "تصبح على خير", "fr": "bonne nuit", "hi": "शुभ रात्रि" }, "example": { "english": "Good night. See you tomorrow.", "translations": { "ar": "تصبح على خير. أراك غداً.", "fr": "Bonne nuit. À demain.", "hi": "शुभ रात्रि। कल मिलते हैं।" } } },
+    { "id": "v-day", "word": "day", "ipa": "/deɪ/", "partOfSpeech": "noun", "emoji": "🌞", "translations": { "ar": "يوم", "fr": "jour", "hi": "दिन" }, "example": { "english": "Have a good day!", "translations": { "ar": "أتمنى لك يوماً سعيداً!", "fr": "Passe une bonne journée !", "hi": "शुभ दिन!" } } }
+  ],
+
+  "sentences": [
+    { "id": "s-1", "english": "Good morning, everyone.", "translations": { "ar": "صباح الخير للجميع.", "fr": "Bonjour à tous.", "hi": "सब को सुप्रभात।" } },
+    { "id": "s-2", "english": "Good evening, how are you?", "translations": { "ar": "مساء الخير، كيف حالك؟", "fr": "Bonsoir, comment ça va ?", "hi": "शुभ संध्या, आप कैसे हैं?" } },
+    { "id": "s-3", "english": "Good night and sweet dreams.", "translations": { "ar": "تصبح على خير وأحلاماً سعيدة.", "fr": "Bonne nuit et doux rêves.", "hi": "शुभ रात्रि और मीठे सपने।" } }
+  ],
+
+  "grammar": [
+    {
+      "id": "g-time-greetings",
+      "title": { "ar": "التحية حسب الوقت", "fr": "Saluer selon le moment", "hi": "समय के अनुसार अभिवादन", "en": "Greetings by time" },
+      "body": {
+        "ar": "نستخدم Good morning من الصباح حتى الظهر، وGood afternoon بعد الظهر حتى غروب الشمس، وGood evening مساءً، وGood night عند النوم أو الوداع ليلاً.",
+        "fr": "Good morning s'utilise le matin, Good afternoon l'après-midi, Good evening le soir, et Good night pour le coucher ou le départ nocturne.",
+        "hi": "Good morning सुबह, Good afternoon दोपहर, Good evening शाम और Good night सोते या रात को जाते समय बोलते हैं।",
+        "en": "Good morning (AM), Good afternoon (PM until sunset), Good evening (night), Good night (sleep/leaving at night)."
+      }
+    }
+  ],
+
+  "flashcards": [
+    { "id": "fc-1", "front": { "ar": "صباح الخير", "fr": "bonjour (matin)", "hi": "सुप्रभात" }, "back": "good morning", "vocabId": "v-morning" },
+    { "id": "fc-2", "front": { "ar": "مساء الخير (بعد الظهر)", "fr": "bon après-midi", "hi": "शुभ अपराह्न" }, "back": "good afternoon", "vocabId": "v-afternoon" },
+    { "id": "fc-3", "front": { "ar": "مساء الخير", "fr": "bonsoir", "hi": "शुभ संध्या" }, "back": "good evening", "vocabId": "v-evening" },
+    { "id": "fc-4", "front": { "ar": "تصبح على خير", "fr": "bonne nuit", "hi": "शुभ रात्रि" }, "back": "good night", "vocabId": "v-night" },
+    { "id": "fc-5", "front": { "ar": "يوم", "fr": "jour", "hi": "दिन" }, "back": "day", "vocabId": "v-day" }
+  ],
+
+  "practice": {
+    "questions": [
+      { "id": "q1", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "ما معنى Good morning؟", "fr": "Que signifie Good morning ?", "hi": "Good morning का अर्थ?" }, "stem": "good morning", "options": ["مساء الخير", "صباح الخير", "تصبح على خير", "وداعاً"], "answer": 1 },
+      { "id": "q2", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "ما معنى Good evening؟", "fr": "Que signifie Good evening ?", "hi": "Good evening का अर्थ?" }, "stem": "good evening", "options": ["صباح الخير", "تصبح على خير", "مساء الخير", "من فضلك"], "answer": 2 },
+      { "id": "q3", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "ما معنى Good night؟", "fr": "Que signifie Good night ?", "hi": "Good night का अर्थ?" }, "stem": "good night", "options": ["تصبح على خير", "صباح الخير", "أهلاً", "شكراً"], "answer": 0 },
+      { "id": "q4", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "ما معنى Good afternoon؟", "fr": "Que signifie Good afternoon ?", "hi": "Good afternoon का अर्थ?" }, "stem": "good afternoon", "options": ["مساء الخير (بعد الظهر)", "صباح الخير", "تصبح على خير", "نعم"], "answer": 0 },
+      { "id": "q5", "kind": "translate-choice", "difficulty": 1, "prompt": { "ar": "اختر الترجمة الصحيحة لـ صباح الخير", "fr": "Choisissez la bonne traduction de bonjour (matin)", "hi": "सुप्रभात का सही अनुवाद" }, "source": { "ar": "صباح الخير", "fr": "bonjour (matin)", "hi": "सुप्रभात" }, "options": ["good morning", "good night", "good evening", "goodbye"], "answer": 0 },
+      { "id": "q6", "kind": "translate-choice", "difficulty": 1, "prompt": { "ar": "اختر الترجمة الصحيحة لـ تصبح على خير", "fr": "Choisissez la bonne traduction de bonne nuit", "hi": "शुभ रात्रि का सही अनुवाद" }, "source": { "ar": "تصبح على خير", "fr": "bonne nuit", "hi": "शुभ रात्रि" }, "options": ["good night", "good morning", "hello", "please"], "answer": 0 },
+      { "id": "q7", "kind": "translate-choice", "difficulty": 1, "prompt": { "ar": "اختر الترجمة الصحيحة لـ مساء الخير", "fr": "Choisissez la bonne traduction de bonsoir", "hi": "शुभ संध्या का सही अनुवाद" }, "source": { "ar": "مساء الخير", "fr": "bonsoir", "hi": "शुभ संध्या" }, "options": ["good night", "good evening", "good morning", "goodbye"], "answer": 1 },
+      { "id": "q8", "kind": "translate-prompt", "difficulty": 2, "prompt": { "ar": "اكتب بالإنجليزية: صباح الخير", "fr": "Écrivez en anglais : bonjour (matin)", "hi": "अंग्रेज़ी में लिखें: सुप्रभात" }, "source": { "ar": "صباح الخير", "fr": "bonjour (matin)", "hi": "सुप्रभात" }, "answers": ["good morning"] },
+      { "id": "q9", "kind": "translate-prompt", "difficulty": 2, "prompt": { "ar": "اكتب بالإنجليزية: تصبح على خير", "fr": "Écrivez en anglais : bonne nuit", "hi": "अंग्रेज़ी में लिखें: शुभ रात्रि" }, "source": { "ar": "تصبح على خير", "fr": "bonne nuit", "hi": "शुभ रात्रि" }, "answers": ["good night"] },
+      { "id": "q10", "kind": "translate-prompt", "difficulty": 2, "prompt": { "ar": "اكتب بالإنجليزية: مساء الخير", "fr": "Écrivez en anglais : bonsoir", "hi": "अंग्रेज़ी में लिखें: शुभ संध्या" }, "source": { "ar": "مساء الخير", "fr": "bonsoir", "hi": "शुभ संध्या" }, "answers": ["good evening"] },
+      { "id": "q11", "kind": "fill-blank", "difficulty": 2, "prompt": { "ar": "أكمل الجملة (صباح)", "fr": "Complétez (matin)", "hi": "वाक्य पूरा करें (सुबह)" }, "sentence": "___ morning, everyone!", "answers": ["Good", "good"] },
+      { "id": "q12", "kind": "fill-blank", "difficulty": 2, "prompt": { "ar": "أكمل الجملة (مساء)", "fr": "Complétez (soir)", "hi": "वाक्य पूरा करें (शाम)" }, "sentence": "Good ___ . Welcome to our home.", "answers": ["evening", "Evening"] },
+      { "id": "q13", "kind": "true-false", "difficulty": 1, "prompt": { "ar": "هل العبارة صحيحة؟", "fr": "Vrai ou faux ?", "hi": "सही या गलत?" }, "statement": "Good morning is used in the evening.", "isTrue": false },
+      { "id": "q14", "kind": "true-false", "difficulty": 1, "prompt": { "ar": "هل العبارة صحيحة؟", "fr": "Vrai ou faux ?", "hi": "सही या गलत?" }, "statement": "Good night can mean goodbye before sleep.", "isTrue": true },
+      { "id": "q15", "kind": "word-order", "difficulty": 2, "prompt": { "ar": "رتّب الكلمات", "fr": "Remettez les mots en ordre", "hi": "शब्दों को क्रम में लगाएँ" }, "tokens": ["Good", "morning", "everyone"], "shuffled": ["everyone", "Good", "morning"] },
+      { "id": "q16", "kind": "word-order", "difficulty": 2, "prompt": { "ar": "رتّب الكلمات", "fr": "Remettez les mots en ordre", "hi": "शब्दों को क्रम में लगाएँ" }, "tokens": ["Good", "night", "sweet", "dreams"], "shuffled": ["dreams", "Good", "sweet", "night"] },
+      { "id": "q17", "kind": "tap-to-build", "difficulty": 2, "prompt": { "ar": "ابنِ الجملة: أتمنى لك يوماً سعيداً", "fr": "Formez la phrase : passe une bonne journée", "hi": "वाक्य बनाएँ: शुभ दिन" }, "target": "Have a good day", "bank": ["Have", "a", "good", "day", "night", "Hello"] },
+      { "id": "q18", "kind": "tap-to-build", "difficulty": 3, "prompt": { "ar": "ابنِ الجملة: مساء الخير كيف حالك؟", "fr": "Formez la phrase : bonsoir, comment ça va", "hi": "वाक्य बनाएँ: शुभ संध्या, आप कैसे हैं?" }, "target": "Good evening how are you", "bank": ["Good", "evening", "how", "are", "you", "morning", "bye"] },
+      { "id": "q19", "kind": "match-pairs", "difficulty": 2, "prompt": { "ar": "طابق التحيات مع الوقت", "fr": "Associez les salutations au moment", "hi": "अभिवादन को समय से जोड़ें" }, "pairs": [ { "left": "good morning", "right": "صباح" }, { "left": "good afternoon", "right": "بعد الظهر" }, { "left": "good evening", "right": "مساء" }, { "left": "good night", "right": "نوم" } ] },
+      { "id": "q20", "kind": "match-pairs", "difficulty": 2, "prompt": { "ar": "طابق الكلمات الإنجليزية مع معانيها", "fr": "Associez les mots à leur sens", "hi": "शब्दों को अर्थ से जोड़ें" }, "pairs": [ { "left": "good morning", "right": "صباح الخير" }, { "left": "good night", "right": "تصبح على خير" }, { "left": "day", "right": "يوم" } ] },
+      { "id": "q21", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "أي تحية تُستخدم في الصباح؟", "fr": "Quelle salutation s'utilise le matin ?", "hi": "सुबह कौन-सा अभिवादन?" }, "stem": "good morning", "options": ["good night", "good morning", "good evening", "goodbye"], "answer": 1 },
+      { "id": "q22", "kind": "multiple-choice", "difficulty": 1, "prompt": { "ar": "أي تحية تُقال عند النوم؟", "fr": "Quelle salutation dit-on au coucher ?", "hi": "सोते समय कौन-सा अभिवादन?" }, "stem": "good night", "options": ["good morning", "good afternoon", "good night", "hello"], "answer": 2 },
+      { "id": "q23", "kind": "translate-choice", "difficulty": 1, "prompt": { "ar": "اختر الترجمة الصحيحة لـ مساء الخير (بعد الظهر)", "fr": "Choisissez la bonne traduction", "hi": "सही अनुवाद चुनें" }, "source": { "ar": "مساء الخير (بعد الظهر)", "fr": "bon après-midi", "hi": "शुभ अपराह्न" }, "options": ["good afternoon", "good morning", "good night", "hello"], "answer": 0 },
+      { "id": "q24", "kind": "translate-prompt", "difficulty": 2, "prompt": { "ar": "اكتب بالإنجليزية: مساء الخير (بعد الظهر)", "fr": "Écrivez en anglais : bon après-midi", "hi": "अंग्रेज़ी में लिखें: शुभ अपराह्न" }, "source": { "ar": "مساء الخير (بعد الظهر)", "fr": "bon après-midi", "hi": "शुभ अपराह्न" }, "answers": ["good afternoon"] },
+      { "id": "q25", "kind": "fill-blank", "difficulty": 2, "prompt": { "ar": "أكمل: تصبح على خير أراك غداً", "fr": "Complétez : bonne nuit à demain", "hi": "पूरा करें: शुभ रात्रि कल मिलते हैं" }, "sentence": "Good ___ . See you tomorrow.", "answers": ["night", "Night"] },
+      { "id": "q26", "kind": "word-order", "difficulty": 3, "prompt": { "ar": "رتّب الكلمات", "fr": "Remettez les mots en ordre", "hi": "शब्दों को क्रम में लगाएँ" }, "tokens": ["Have", "a", "good", "day"], "shuffled": ["day", "good", "a", "Have"] },
+      { "id": "q27", "kind": "true-false", "difficulty": 1, "prompt": { "ar": "هل العبارة صحيحة؟", "fr": "Vrai ou faux ?", "hi": "सही या गलत?" }, "statement": "Good afternoon is used before sunset in the daytime.", "isTrue": true },
+      { "id": "q28", "kind": "match-pairs", "difficulty": 2, "prompt": { "ar": "طابق كل عبارة بمعناها", "fr": "Associez chaque expression à son sens", "hi": "हर वाक्यांश को अर्थ से जोड़ें" }, "pairs": [ { "left": "good morning", "right": "صباح الخير" }, { "left": "good evening", "right": "مساء الخير" }, { "left": "good night", "right": "تصبح على خير" }, { "left": "day", "right": "يوم" } ] }
+    ]
+  }
+}
