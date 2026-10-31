@@ -9,7 +9,9 @@
  *   #/lesson/:lessonId        (lesson selection: practice vs study)
  *   #/practice/:lessonId
  *   #/study/:lessonId
- *   #/revision
+ *   #/drills                  (practice hub: current lessons, available sessions)
+ *   #/revision                (review hub: due/weak/incorrect words)
+ *   #/progress                (progress dashboard)
  *   #/exam/:unitId
  *   #/profile
  *   #/settings
@@ -24,7 +26,9 @@ export type Route =
   | { name: 'lesson'; lessonId: string }
   | { name: 'practice'; lessonId: string }
   | { name: 'study'; lessonId: string }
+  | { name: 'drills' }
   | { name: 'revision' }
+  | { name: 'progress' }
   | { name: 'exam'; unitId: string }
   | { name: 'profile' }
   | { name: 'settings' }
@@ -43,7 +47,9 @@ export function parseHash(hash: string): Route {
     case 'lesson': return parts[1] ? { name: 'lesson', lessonId: parts[1] } : { name: 'path' };
     case 'practice': return parts[1] ? { name: 'practice', lessonId: parts[1] } : { name: 'path' };
     case 'study': return parts[1] ? { name: 'study', lessonId: parts[1] } : { name: 'path' };
+    case 'drills': return { name: 'drills' };
     case 'revision': return { name: 'revision' };
+    case 'progress': return { name: 'progress' };
     case 'exam': return parts[1] ? { name: 'exam', unitId: parts[1] } : { name: 'path' };
     case 'profile': return { name: 'profile' };
     case 'settings': return { name: 'settings' };
@@ -61,7 +67,9 @@ export function routeToHash(route: Route): string {
     case 'lesson': return `#/lesson/${route.lessonId}`;
     case 'practice': return `#/practice/${route.lessonId}`;
     case 'study': return `#/study/${route.lessonId}`;
+    case 'drills': return '#/drills';
     case 'revision': return '#/revision';
+    case 'progress': return '#/progress';
     case 'exam': return `#/exam/${route.unitId}`;
     case 'profile': return '#/profile';
     case 'settings': return '#/settings';
